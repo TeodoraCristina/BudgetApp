@@ -17,6 +17,5 @@ function addNewItem(){
 }
 
 function removeItem(item){
-   var rows = Array.prototype.slice.call( expenseContent.children );
-   rows.removeChild(rows.childNodes[rows.indexOf(item.parentElement)]);
+    item.parentElement.remove();
 }
