@@ -5,6 +5,7 @@
   margin: 0; }
 
 body {
+  overflow: hidden;
   margin: 0px;
   font-family: 'Open Sans'; }
 
@@ -83,10 +84,13 @@ body {
       .sidebar .side-hover:active a {
         color: #0E4484;
         font-weight: 700px; }
-  .sidebar .dashboard, .sidebar .dashboard:hover {
+    .sidebar .side-hover:focus {
+      outline: none; }
+  .sidebar .dashboard {
     background-color: #E3F5FF;
-    color: #0E4484; }
-    .sidebar .dashboard a, .sidebar .dashboard:hover a {
+    color: #0E4484;
+    pointer-events: none; }
+    .sidebar .dashboard a {
       color: #0E4484;
       font-weight: 700px; }
 
@@ -106,7 +110,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  padding: 30px;
+  padding: 30px 30px 15px 30px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content; }
@@ -119,16 +123,7 @@ body {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between; }
-  .dropdown-filter .navigation-dropdown {
-    cursor: pointer;
-    border-radius: 5px;
-    border: 1px solid #CAEAFF;
-    padding: 10px 15px;
-    margin-right: 30px;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content; }
-  .dropdown-filter .fa-sort-down {
+  .dropdown-filter .fa-caret-down {
     color: #CAEAFF; }
 
 .main-buttons {
@@ -155,6 +150,7 @@ body {
     background-color: #26DE81; }
 
 .dashboard {
+  overflow: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -307,9 +303,7 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
@@ -374,6 +368,8 @@ body {
   justify-content: space-between; }
 
 .dropdown-inputs {
+  margin-top: 15px;
+  margin-left: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -410,8 +406,6 @@ body {
   margin-left: 5px; }
 
 .dropdown {
-  margin-left: 15px;
-  margin-top: 15px;
   width: 160px;
   padding: 12px 15px;
   border-radius: 5px;
@@ -422,7 +416,12 @@ body {
   display: flex;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between; }
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .dropdown:not(:first-child) {
+    margin-left: 15px; }
   .dropdown .fas {
     color: #CAEAFF; }
 
@@ -469,3 +468,6 @@ body {
 .submit {
   color: white;
   background-color: #0E4484; }
+
+.incomeModal {
+  display: none; }

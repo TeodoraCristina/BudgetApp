@@ -48,13 +48,13 @@
 
         <div class="navigation-menu"> 
             <div class="dropdown-filter">
-                <div class="navigation-dropdown">
+                <div class="dropdown">
                     <span>Month</span>
-                    <i class="fas fa-sort-down"></i>
+                    <i class="fas fa-caret-down"></i>
                 </div>              
-                <div class="navigation-dropdown">
+                <div class="dropdown">
                     <span>Cash</span>
-                    <i class="fas fa-sort-down"></i>
+                    <i class="fas fa-caret-down"></i>
                 </div>
             </div>
             <div class="main-buttons">
@@ -62,7 +62,8 @@
                      onclick="openExpenseModal()">
                     <a>EXPENSE</a>
                 </div>                     
-                <div class="button income">
+                <div class="button income"
+                    onclick="openIncomeModal()">
                     <a>INCOME</a>
                 </div>
             </div>
@@ -260,71 +261,30 @@
         
         </div>
 
-
-
-
     </div>
 
-    <!-- overlay & modal-->
+    <!-- overlay & modals-->
 
-    <div class="overlay">
+     <div class="overlay"> 
         <div class="modal-container">
             <div class="header">
-                <p>EXPENSES</p>
-                <p>300</p>
+                <p>INCOME</p>
+                <p>0</p>
             </div>
-            <div class="content expense-content">
-                    <div class="row">
-                        <div class="remove-button"
-                             onclick="removeItem(this)">
-                            <i class="fas fa-times"></i>
-                        </div>
-                        <div class="dropdown-inputs">
-                            <div class="dropdown">
-                                <p>Rent</p>
-                                <i class="fas fa-sort-down"></i>
-                            </div>
-                            <div class="dropdown">
-                                <p>05/05/2018</p>
-                                <i class="fas fa-sort-down"></i>
-                            </div>
-                            <div class="dropdown">
-                                <p class="category-expense">270</p>
-                            </div>
-                        </div>
-                    </div>
+            <div class="content income-content">
                     <div class="row">
                             <div class="remove-button"
-                                 onclick="removeItem(this)">
-                                <i class="fas fa-times"></i>
-                            </div>
-                            <div class="dropdown-inputs">
-                                <div class="dropdown">
-                                    <p>Pet</p>
-                                    <i class="fas fa-sort-down"></i>
-                                </div>
-                                <div class="dropdown">
-                                    <p>10/05/2018</p>
-                                    <i class="fas fa-sort-down"></i>
-                                </div>
-                                <div class="dropdown">
-                                    <p class="category-expense">30</p>
-                                </div>
-                            </div>
-                    </div>
-                    <div class="row">
-                            <div class="remove-button"
-                                 onclick="removeItem(this)">
+                                    onclick="removeItem(this)">
                                 <i class="fas fa-times"></i>
                             </div>
                             <div class="dropdown-inputs">
                                 <div class="dropdown">
                                     <p>Category</p>
-                                    <i class="fas fa-sort-down"></i>
+                                    <i class="fas fa-caret-down"></i>
                                 </div>
                                 <div class="dropdown">
                                     <p>01/01/2019</p>
-                                    <i class="fas fa-sort-down"></i>
+                                    <i class="fas fa-caret-down"></i>
                                 </div>
                                 <div class="dropdown">
                                     <p class="category-expense">0</p>
@@ -334,7 +294,46 @@
             </div>
             <div class="buttons-area">
                 <div class="add-item button"
-                     onclick="addNewItem()">+ Item</div>
+                        onclick="addNewItemIncome()">+ Item</div>
+                <div class="validation-buttons">
+                    <div class="cancel button"
+                        onclick="closeIncomeModal()">Cancel</div>
+                    <div class="submit button">Submit</div>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+    <div class="overlay"> 
+        <div class="modal-container">
+            <div class="header">
+                <p>EXPENSES</p>
+                <p>0</p>
+            </div>
+            <div class="content expense-content">
+                    <div class="row">
+                            <div class="remove-button"
+                                 onclick="removeItem(this)">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="dropdown-inputs">
+                                <div class="dropdown">
+                                    <p>Category</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p>01/01/2019</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p class="category-expense">0</p>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="buttons-area">
+                <div class="add-item button"
+                     onclick="addNewItemExpense()">+ Item</div>
                 <div class="validation-buttons">
                     <div class="cancel button"
                          onclick="closeExpenseModal()">Cancel</div>
