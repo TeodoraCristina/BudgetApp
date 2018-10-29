@@ -32,32 +32,58 @@ function closeExpenseModal(){
 
 //Adding and removing a row in modal (Expense)
 
-var itemRow = document.getElementsByClassName('row')[0];
+var itemRowExpense = document.getElementsByClassName('row')[1];
 var expenseContent = document.getElementsByClassName('expense-content')[0];
 
 
 function addNewItemExpense(){
-    var clone = itemRow.cloneNode(true);
+    var clone = itemRowExpense.cloneNode(true);
     expenseContent.appendChild(clone);
 }
 
-function removeItem(item){
-    item.parentElement.remove();
+function removeExpenseItem(item){
+    let count = expenseContent.childElementCount;
+    console.log(count)
+    if(count != 1)
+    {
+        item.parentElement.remove();
+    }
 }
 
 
 
 //Adding and removing a row in modal (Income)
 
-var itemRow = document.getElementsByClassName('row')[0];
+var itemRowIncome = document.getElementsByClassName('row')[0];
 var incomeContent = document.getElementsByClassName('income-content')[0];
 
 
 function addNewItemIncome(){
-    var clone = itemRow.cloneNode(true);
+    var clone = itemRowIncome.cloneNode(true);
     incomeContent.appendChild(clone);
 }
 
-function removeItem(item){
-    item.parentElement.remove();
+function removeIncomeItem(item){
+    let count = incomeContent.childElementCount;
+    if(count != 1)
+    {
+        item.parentElement.remove();
+    }
+
 }
+
+var incomeTotal = document.getElementsByClassName("income-total")[0];
+
+function updateIncome(){
+    var toUpdate = incomeTotal.children[1];
+    var factors = document.getElementsByClassName('income-to-add');
+    let finalValue = 0;
+
+    for(let index = 0; index < factors.length; ++index){
+        finalValue += parseFloat(factors[index].innerHTML);
+    }
+    toUpdate.innerHTML = finalValue;
+
+}
+
+setInterval(updateIncome, 1000);
