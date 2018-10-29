@@ -1,0 +1,352 @@
+<!Doctype <!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+</head>
+
+<body>
+    
+<div class="container">
+
+    <!--sidebar-->
+
+    <div class="sidebar">
+        <div class="menu-list">
+            <div tabindex="0" class="side-hover dashboard">
+                <i class="fas fa-columns"></i>
+                <a href="#" class="menu-item">Dashboard</a>
+            </div>
+            
+            <div tabindex="1" class="side-hover">
+                <i class="fas fa-dollar-sign"></i>
+                <a href="#" class="menu-item">Savings</a>
+            </div>
+
+            <div tabindex="2" class="side-hover">
+                <i class="fas fa-clipboard-list"></i>
+                <a href="#" class="menu-item">Category</a>
+            </div>
+
+            <div tabindex="3" class="side-hover">
+                <i class="fas fa-money-bill-alt"></i>
+                <a href="#" class="menu-item">Budget</a>
+            </div>
+        </div>
+    </div>
+
+   <!--dashboard-->
+
+    <div class="dashboard">
+
+        <!--navigation menu-->
+
+        <div class="navigation-menu"> 
+            <div class="dropdown-filter">
+                <div class="month dropdown">
+                    <span>Month</span>
+                    <i class="fas fa-sort-down"></i>
+                </div>              
+                <div class="dropdown">
+                    <span>Cash</span>
+                    <i class="fas fa-sort-down"></i>
+                </div>
+            </div>
+            <div class="main-buttons">
+                <div class="button expense"
+                     onclick="openExpenseModal()">
+                    <a>EXPENSE</a>
+                </div>                     
+                <div class="button income">
+                    <a>INCOME</a>
+                </div>
+            </div>
+        </div>
+
+        <!--main-area-->
+
+        <div class="main-area">
+
+            <div class="col-1">
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <p>BALANCE</p>
+                        <p>100</p>
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <p>EXPENSES</p>
+                        <p>1300</p>
+                    </div>
+                    <div class="tile-content">
+                        <div class="content">
+                            <p>Rent</p>
+                            <p>500</p>
+                        </div>
+                        <div class="content">
+                            <p>Bills</p>
+                            <p>100</p>
+                        </div>
+                        <div class="content">
+                            <p>Food</p>
+                            <p>400</p>
+                        </div>
+                        <div class="content">
+                            <p>Clothes</p>
+                            <p>100</p>
+                        </div>
+                        <div class="content">
+                            <p>Car</p>
+                            <p>200</p>
+                        </div>
+                        <div class="content">
+                            <p>Entertainment</p>
+                            <p>100</p>
+                        </div>
+                        <div class="content">
+                            <p>Pet</p>
+                            <p>200</p>
+                        </div>     
+                        <div class="content">
+                            <p>Travel</p>
+                            <p>200</p>
+                        </div>                             
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <p>INCOME</p>
+                        <p>1500</p>
+                    </div>
+                    <div class="tile-content">
+                        <div class="content">
+                            <p>Salary</p>
+                            <p>1000</p>
+                        </div>
+                    <div class="content">
+                        <p>Allowance</p>
+                        <p>500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-2">
+    
+        <div class="row-1">
+            <div class="tile">
+                <div class="tile-header">
+                    <p>ECONOMIES</p>
+                    <p>3000</p>
+                </div>
+                <div class="tile-content">
+                    <div class="content">
+                        <p>Previous months</p>
+                        <p>2900</p>
+                    </div>
+                    <div class="content">
+                        <p>This month</p>
+                        <p>100</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile-header">
+                    <p>TOTAL</p>
+                    <p>3000</p>
+                </div>
+                <div class="tile-content">
+                    <div class="content">
+                        <p>Cash</p>
+                        <p>2900</p>
+                    </div>
+                    <div class="content">
+                        <p>Card</p>
+                        <p>100</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tile">
+                <div class="tile-header">
+                    <p>NEW LAPTOP</p>
+                    <p>2250/4500</p>
+                </div>
+                <div class="tile-content">
+                    <div class="content-bar">
+                        <div class="progress bar-goal"></div>
+                    </div>
+                    <div class="content">
+                        <p>Time approximation: </p>
+                        <p>82 days</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row-2">
+            <div class="tile budget">
+                    <div class="tile-header">
+                        <p>BUDGET</p>
+                    </div>
+                    <div class="tile-content">
+                        <div class="content">
+                            <p>Rent</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Bills</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Food</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Clothes</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Car</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Entertainment</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>
+                        <div class="content">
+                            <p>Pet</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>     
+                        <div class="content">
+                            <p>Travel</p>
+                            <div class="card-budget-bar">
+                                <div class="progress bar-budget"></div>
+                            </div>
+                        </div>                             
+                    </div>
+                    <div class="today-tooltip-container">
+                        <div class="tooltip-move-area">
+                            <img id="today-tooltip" src="./today-tooltip.svg" alt="today tooltip">
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+        
+        </div>
+
+
+
+
+    </div>
+
+    <!-- overlay & modal-->
+
+    <div class="overlay">
+        <div class="modal-container">
+            <div class="header">
+                <p>EXPENSES</p>
+                <p>300</p>
+            </div>
+            <div class="content expense-content">
+                    <div class="row">
+                        <div class="remove-button"
+                             onclick="removeItem(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                        <div class="dropdown-inputs">
+                            <div class="dropdown">
+                                <p>Rent</p>
+                                <i class="fas fa-sort-down"></i>
+                            </div>
+                            <div class="dropdown">
+                                <p>05/05/2018</p>
+                                <i class="fas fa-sort-down"></i>
+                            </div>
+                            <div class="dropdown">
+                                <p class="category-expense">270</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                            <div class="remove-button"
+                                 onclick="removeItem(this)">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="dropdown-inputs">
+                                <div class="dropdown">
+                                    <p>Pet</p>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p>10/05/2018</p>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p class="category-expense">30</p>
+                                </div>
+                            </div>
+                    </div>
+                    <div class="row">
+                            <div class="remove-button"
+                                 onclick="removeItem(this)">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="dropdown-inputs">
+                                <div class="dropdown">
+                                    <p>Category</p>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p>01/01/2019</p>
+                                    <i class="fas fa-sort-down"></i>
+                                </div>
+                                <div class="dropdown">
+                                    <p class="category-expense">0</p>
+                                </div>
+                            </div>
+                    </div>
+            </div>
+            <div class="buttons-area">
+                <div class="add-item button"
+                     onclick="addNewItem()">+ Item</div>
+                <div class="validation-buttons">
+                    <div class="cancel button"
+                         onclick="closeExpenseModal()">Cancel</div>
+                    <div class="submit button">Submit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<script src="script.js"></script>
+</body>
+</html>
