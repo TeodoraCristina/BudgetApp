@@ -332,6 +332,11 @@ body {
         &:active{
             background-color: $secondaryColor;
         }
+
+        &.disabled{
+            color:red;
+            pointer-events: none;
+        }
     }
 }
 
