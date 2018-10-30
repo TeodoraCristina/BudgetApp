@@ -1,3 +1,14 @@
+// Navigation dropdown
+
+// var monthsList = document.getElementsByClassName('months-list')[0];
+
+function openMonthDropdown(element) { 
+    element.classList.toggle("show");
+}
+
+
+
+
 //Income modal
 
 var overlayIncome = document.getElementsByClassName('overlay')[0];
