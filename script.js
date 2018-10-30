@@ -30,29 +30,6 @@ function closeExpenseModal(){
 
 
 
-//Adding and removing a row in modal (Expense)
-
-var itemRowExpense = document.getElementsByClassName('row')[1];
-var expenseContent = document.getElementsByClassName('expense-content')[0];
-
-
-function addNewItemExpense(){
-    var clone = itemRowExpense.cloneNode(true);
-    expenseContent.appendChild(clone);
-}
-
-
-
-function removeExpenseItem(item){
-    let count = expenseContent.childElementCount;
-    if(count != 1)
-    {
-        item.parentElement.remove();
-    }
-}
-
-
-
 //Adding and removing a row in modal (Income)
 
 var itemRowIncome = document.getElementsByClassName('row')[0];
