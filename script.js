@@ -29,7 +29,6 @@ function closeExpenseModal(){
 }
 
 
-
 //Adding and removing a row in modal (Income)
 
 var itemRowIncome = document.getElementsByClassName('row')[0];
@@ -55,7 +54,7 @@ function removeIncomeItem(item){
 
 //Adding and removing a row in modal (Expense)
 
-var itemRowExpense = document.getElementsByClassName('row')[0];
+var itemRowExpense = document.getElementsByClassName('row')[1];
 var expenseContent = document.getElementsByClassName('expense-content')[0];
 
 
@@ -70,7 +69,7 @@ function removeExpenseItem(item){
     let count = expenseContent.childElementCount;
     if (count == 2)
     {
-        let removeButton = document.getElementsByClassName('remove-button')[0];
+        let removeButton = document.getElementsByClassName('remove-button')[1];
         removeButton.classList.add("disabled");
     }
     item.parentElement.remove();
