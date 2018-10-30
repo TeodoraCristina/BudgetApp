@@ -488,7 +488,7 @@ body {
 }
 
 .row .remove-button.disabled {
-  color: red;
+  color: #E3F5FF;
   pointer-events: none;
 }
 

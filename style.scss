@@ -334,7 +334,7 @@ body {
         }
 
         &.disabled{
-            color:red;
+            color: $secondaryColorLight;
             pointer-events: none;
         }
     }
