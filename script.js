@@ -32,24 +32,24 @@ function closeExpenseModal(){
 
 //Adding and removing a row in modal (Expense)
 
-var itemRowExpense = document.getElementsByClassName('row')[1];
-var expenseContent = document.getElementsByClassName('expense-content')[0];
+// var itemRowExpense = document.getElementsByClassName('row')[1];
+// var expenseContent = document.getElementsByClassName('expense-content')[0];
 
 
-function addNewItemExpense(){
-    var clone = itemRowExpense.cloneNode(true);
-    expenseContent.appendChild(clone);
-}
+// function addNewItemExpense(){
+//     var clone = itemRowExpense.cloneNode(true);
+//     expenseContent.appendChild(clone);
+// }
 
 
 
-function removeExpenseItem(item){
-    let count = expenseContent.childElementCount;
-    if(count != 1)
-    {
-        item.parentElement.remove();
-    }
-}
+// function removeExpenseItem(item){
+//     let count = expenseContent.childElementCount;
+//     if(count != 1)
+//     {
+//         item.parentElement.remove();
+//     }
+// }
 
 
 
@@ -78,7 +78,7 @@ function removeIncomeItem(item){
 
 //Adding and removing a row in modal (Expense)
 
-var itemRowExpense = document.getElementsByClassName('row')[0];
+var itemRowExpense = document.getElementsByClassName('row')[1];
 var expenseContent = document.getElementsByClassName('expense-content')[0];
 
 
@@ -93,7 +93,7 @@ function removeExpenseItem(item){
     let count = expenseContent.childElementCount;
     if (count == 2)
     {
-        let removeButton = document.getElementsByClassName('remove-button')[0];
+        let removeButton = document.getElementsByClassName('remove-button')[1];
         removeButton.classList.add("disabled");
     }
     item.parentElement.remove();
