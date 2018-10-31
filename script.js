@@ -42,8 +42,8 @@ function closeExpenseModal(){
 
 //Adding and removing a row in modal (Income)
 
-var itemRowIncome = document.querySelectorAll('.income-content .row')[0];
-var incomeContent = document.getElementsByClassName('income-content')[0];
+var itemRowIncome = document.querySelectorAll('.modal-content-income .row')[0];
+var incomeContent = document.getElementsByClassName('modal-content-income')[0];
 
 
 function addNewItemIncome(){
@@ -57,7 +57,7 @@ function removeIncomeItem(item){
     let count = incomeContent.childElementCount;
     if (count == 2)
     {
-        let removeButton = document.querySelectorAll('.income-content .remove-button')[0];
+        let removeButton = document.querySelectorAll('.modal-content-income .remove-button')[0];
         removeButton.classList.add("disabled");
     }
     item.parentElement.remove();
@@ -65,8 +65,8 @@ function removeIncomeItem(item){
 
 //Adding and removing a row in modal (Expense)
 
-var itemRowExpense = document.querySelectorAll('.expense-content .row')[0];
-var expenseContent = document.getElementsByClassName('expense-content')[0];
+var itemRowExpense = document.querySelectorAll('.modal-content-expense .row')[0];
+var expenseContent = document.getElementsByClassName('modal-content-expense')[0];
 
 
 function addNewItemExpense(){
@@ -83,7 +83,7 @@ function removeExpenseItem(item){
     
     if (count == 2)
     {
-        let removeButton = document.querySelectorAll('.expense-content .remove-button')[0];
+        let removeButton = document.querySelectorAll('.modal-content-expense .remove-button')[0];
         removeButton.classList.add("disabled");
     }
         item.parentElement.remove();

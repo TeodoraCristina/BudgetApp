@@ -11,6 +11,38 @@ body {
   font-family: 'Open Sans';
 }
 
+body h1 {
+  font-size: 14px;
+}
+
+body h3 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.button {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 2px 3px #f3f7f8;
+          box-shadow: 0 2px 3px #f3f7f8;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 15px;
+  color: white;
+}
+
 aside {
   width: 150px;
   margin: 0;
@@ -86,20 +118,20 @@ aside .item-hover {
 
 aside .item-hover:hover {
   background-color: #063670;
-  font-weight: 700px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 aside .item-hover:active {
   background-color: #e3f5ff;
   color: #0e4484;
-  font-weight: 700px;
+  font-weight: 700;
   cursor: pointer;
 }
 
 aside .item-hover:active a {
   color: #0e4484;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 aside .item-hover:focus {
@@ -114,17 +146,11 @@ aside .item-dashboard {
 
 aside .item-dashboard a {
   color: #0e4484;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 aside .item-dashboard a:not(:last-child) {
   padding-bottom: 30px;
-}
-
-.container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 nav {
@@ -145,25 +171,13 @@ nav {
 }
 
 .main-buttons {
-  border-radius: 5px;
-  font-weight: 600;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  color: white;
-}
-
-.main-buttons .button {
-  cursor: pointer;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  border-radius: 5px;
-  margin-left: 30px;
-  padding: 10px 15px;
+  width: 210px;
 }
 
 .main-buttons .expense {
@@ -358,7 +372,6 @@ nav {
   margin-bottom: 35px;
 }
 
-/* overlay & modal */
 .overlay {
   position: fixed;
   top: 0;
@@ -424,7 +437,7 @@ nav {
   overflow: auto;
 }
 
-.buttons-area {
+.modal-footer {
   -ms-flex-negative: 0;
       flex-shrink: 0;
   margin-top: 15px;
@@ -436,15 +449,29 @@ nav {
           justify-content: space-between;
 }
 
-.modal-content-flex {
-  margin-top: 15px;
-  margin-left: 15px;
+.modal-footer .validation-buttons {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.modal-footer .add-item {
+  color: #0e4484;
+  background-color: white;
+}
+
+.modal-footer .cancel {
+  margin-right: 15px;
+  color: #0e4484;
+  background-color: white;
+}
+
+.modal-footer .submit {
+  color: white;
+  background-color: #0e4484;
 }
 
 .row {
@@ -457,12 +484,11 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-top: 15px;
 }
 
 .row .remove-button {
   color: #0e4484;
-  margin-top: 10px;
-  margin-left: 20px;
   border-radius: 50%;
   width: 18px;
   height: 18px;
@@ -482,7 +508,7 @@ nav {
   pointer-events: none;
 }
 
-.fa-times {
+.row .remove-button .fa-times {
   font-size: 12px;
   margin-top: 4px;
   margin-left: 5px;
@@ -498,7 +524,7 @@ nav {
           justify-content: space-between;
 }
 
-.dropdown-modal {
+.modal-dropdown {
   margin-left: 15px;
 }
 
@@ -520,17 +546,22 @@ nav {
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 5px;
+  cursor: pointer;
   padding: 12px 15px;
   width: 160px;
   border: 1px solid #caeaff;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
 }
 
 .dropdown .dropdown-input .fas {
   color: #caeaff;
+}
+
+.dropdown .dropdown-input .category-expense {
+  width: 200px;
+  text-align: right;
 }
 
 .dropdown .dropdown-list {
@@ -561,65 +592,5 @@ nav {
 
 .dropdown .dropdown-list a:last-child {
   margin-bottom: 0;
-}
-
-.category-expense {
-  width: 200px;
-  text-align: right;
-}
-
-.validation-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-
-.button {
-  font-size: 14px;
-  font-weight: 700;
-  height: 38px;
-  width: 82px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 2px 3px #f3f7f8;
-          box-shadow: 0 2px 3px #f3f7f8;
-  cursor: pointer;
-}
-
-.add-item {
-  color: #0e4484;
-  background-color: white;
-}
-
-.cancel {
-  margin-right: 15px;
-  color: #0e4484;
-  background-color: white;
-}
-
-.submit {
-  color: white;
-  background-color: #0e4484;
-}
-
-.incomeModal {
-  display: none;
-}
-
-.show {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 /*# sourceMappingURL=style.css.map */

@@ -1,5 +1,4 @@
 
-
 // Variables
 
 $primaryColorDark: #063670;
@@ -10,9 +9,10 @@ $redColor: #ff395d;
 $greenColor: #26de81;
 $blueColor: #00c9ff;
 $progressBarDefault: #f3f7f8;
+$shadow: 0 2px 3px #f3f7f8;
 
+// General
 
-// The rest of the code
 * {
 	box-sizing: border-box;
 	text-decoration: none;
@@ -23,9 +23,36 @@ body {
 	overflow: hidden;
 	margin: 0;
 	font-family: 'Open Sans';
+
+	h1 {
+		font-size: 14px;
+	}
+
+	h3 {
+		font-size: 14px;
+		font-weight: 600;
+	}
 }
 
-// Sidebar ---------------------------------------------------------- 
+.container {
+	display: flex;
+}
+
+// Button component
+
+.button {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	border-radius: 5px;
+	box-shadow: $shadow;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 10px 15px;
+	color: white;
+}
+
+// Sidebar ---------------------------------------------------------------------- 
 
 aside {
 	width: 150px;
@@ -70,19 +97,19 @@ aside {
 
 		&:hover {
 			background-color: $primaryColorDark;
-			font-weight: 700px;
+			font-weight: 700;
 			cursor: pointer;
 		}
 
 		&:active {
 			background-color: $secondaryColorLight;
 			color: $primaryColor;
-			font-weight: 700px;
+			font-weight: 700;
 			cursor: pointer;
 
 			a {
 				color: $primaryColor;
-				font-weight: 700px;
+				font-weight: 700;
 			}
 		}
 
@@ -98,7 +125,7 @@ aside {
 
 		a {
 			color: $primaryColor;
-			font-weight: 700px;
+			font-weight: 700;
 
 			&:not(:last-child) {
 				padding-bottom: 30px;
@@ -107,11 +134,8 @@ aside {
 	}
 }
 
-.container {
-	display: flex;
-}
 
-// Navigation menu
+// Navigation menu -------------------------------------------------------------
 
 nav {
 	display: flex;
@@ -121,21 +145,11 @@ nav {
 	height: fit-content;
 }
 
-
-
 .main-buttons {
-	border-radius: 5px;
-	font-weight: 600;
 	display: flex;
 	justify-content: space-between;
-	color: white;
-	.button {
-		cursor: pointer;
-		height: fit-content;
-		border-radius: 5px;
-		margin-left: 30px;
-		padding: 10px 15px;
-	}
+	width: 210px;
+
 	.expense {
 		background-color: $redColor;
 	}
@@ -213,9 +227,11 @@ nav {
 	display: flex;
 	flex: 3;
 	flex-direction: column;
+
 	.row-1 {
 		flex-shrink: 0;
 		display: flex;
+
 		.tile {
 			flex: 1;
 		}
@@ -230,13 +246,16 @@ nav {
 	display: flex;
 	justify-content: center;
 	padding-bottom: 30px;
+
 	.bar-budget {
 		width: 1000px;
 	}
+
 	.progress {
 		height: 20px;
 		background-color: $progressBarDefault;
 	}
+
 	.bar-goal {
 		width: 300px;
 		display: flex;
@@ -248,16 +267,18 @@ nav {
 	display: flex;
 	justify-content: flex-end;
 	margin: 15px;
+
 	.tooltip-move-area {
 		width: 70px;
 	}
+
 	#today-tooltip {
 		width: 82px;
 		margin-bottom: 35px;
 	}
 }
 
-/* overlay & modal */
+// Overlay ---------------------------------------------------------------------
 
 .overlay {
 	position: fixed;
@@ -271,6 +292,8 @@ nav {
 	flex-direction: column;
 	background-color: rgba(14, 68, 132, .5);
 }
+
+// Modal -----------------------------------------------------------------------
 
 .modal-container {
 	display: flex;
@@ -290,6 +313,7 @@ nav {
 	display: flex;
 	justify-content: space-between;
 	color: $primaryColor;
+
 	p {
 		margin: 15px;
 		font-size: 14px;
@@ -303,29 +327,42 @@ nav {
 	overflow: auto;
 }
 
-.buttons-area {
+.modal-footer {
 	flex-shrink: 0;
 	margin-top: 15px;
 	display: flex;
 	justify-content: space-between;
-}
 
+	.validation-buttons {
+		display: flex;
+		justify-content: space-between;
+	}
 
-.modal-content-flex {
-	margin-top: 15px;
-	margin-left: 15px;
-	display: flex;
-	justify-content: space-between;
+	.add-item {
+		color: $primaryColor;
+		background-color: white;
+	}
+
+	.cancel {
+		margin-right: 15px;
+		color: $primaryColor;
+		background-color: white;
+	}
+
+	.submit {
+		color: white;
+		background-color: $primaryColor;
+	}
 }
 
 .row {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 15px;
+
 	.remove-button {
 		color: $primaryColor;
-		margin-top: 10px;
-		margin-left: 20px;
 		border-radius: 50%;
 		width: 18px;
 		height: 18px;
@@ -342,25 +379,26 @@ nav {
 			color: $secondaryColorLight;
 			pointer-events: none;
 		}
+
+		.fa-times {
+			font-size: 12px;
+			margin-top: 4px;
+			margin-left: 5px;
+		}
 	}
 }
 
-.fa-times {
-	font-size: 12px;
-	margin-top: 4px;
-	margin-left: 5px;
-}
+// Dropdowns ------------------------------------------------------------------
 
 .dropdowns-container {
 	width: 350px;
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 
-.dropdown-modal {
+.modal-dropdown {
 	margin-left: 15px;
 }
-
 
 .dropdown {
 	display: flex;
@@ -370,14 +408,19 @@ nav {
 		display: flex;
 		justify-content: space-between;
 		border-radius: 5px;
+		cursor: pointer;
 		padding: 12px 15px;
 		width: 160px;
 		border: 1px solid $secondaryColor;
 		align-items: center;
-		cursor: pointer;
-	
+
 		.fas {
 			color: $secondaryColor;
+		}
+
+		.category-expense {
+			width: 200px;
+			text-align: right;
 		}
 	}
 
@@ -395,6 +438,7 @@ nav {
 		flex-direction: column;
 		overflow: hidden;
 		overflow-y: scroll;
+
 		a {
 			color: inherit;
 			margin-bottom: 15px;
@@ -408,74 +452,3 @@ nav {
 
 
 
-
-
-
-
-
-
-// .dropdown {
-// 	width: 160px;
-// 	padding: 12px 15px;
-// 	border-radius: 5px;
-// 	border: 1px solid $secondaryColor;
-// 	color: $primaryColor;
-// 	display: flex;
-// 	justify-content: space-between;
-// 	align-items: center;
-// 	cursor: pointer;
-
-// 	&:not(:first-child) {
-// 		margin-left: 15px;
-// 	}
-// 	.fas {
-// 		color: $secondaryColor;
-// 	}
-// }
-
-.category-expense {
-	width: 200px;
-	text-align: right;
-}
-
-.validation-buttons {
-	display: flex;
-	justify-content: space-between;
-}
-
-.button {
-	font-size: 14px;
-	font-weight: 700;
-	height: 38px;
-	width: 82px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	border-radius: 5px;
-	box-shadow: 0 2px 3px #f3f7f8;
-	cursor: pointer;
-}
-
-.add-item {
-	color: $primaryColor;
-	background-color: white;
-}
-
-.cancel {
-	margin-right: 15px;
-	color: $primaryColor;
-	background-color: white;
-}
-
-.submit {
-	color: white;
-	background-color: $primaryColor;
-}
-
-.incomeModal {
-	display: none;
-}
-
-.show {
-	display: flex;
-}
