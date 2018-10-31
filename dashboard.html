@@ -2,14 +2,13 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-        crossorigin="anonymous">
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>BudgetApp</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
@@ -18,29 +17,29 @@
 
         <!--sidebar-->
         <!--THIS IS A TEST COMMENT-->
-        <div class="sidebar">
-            <div class="menu-list">
-                <div tabindex="0" class="side-hover dashboard">
+        <aside>
+            <div class="sidebar">
+                <div tabindex="0" class="item-hover item-dashboard">
                     <i class="fas fa-columns"></i>
-                    <a href="#" class="menu-item">Dashboard</a>
+                    <a href="#" class="sidebar-item">Dashboard</a>
                 </div>
 
-                <div tabindex="1" class="side-hover">
+                <div tabindex="1" class="item-hover">
                     <i class="fas fa-dollar-sign"></i>
-                    <a href="#" class="menu-item">Savings</a>
+                    <a href="#" class="sidebar-item">Savings</a>
                 </div>
 
-                <div tabindex="2" class="side-hover">
+                <div tabindex="2" class="item-hover">
                     <i class="fas fa-clipboard-list"></i>
-                    <a href="#" class="menu-item">Category</a>
+                    <a href="#" class="sidebar-item">Category</a>
                 </div>
 
-                <div tabindex="3" class="side-hover">
+                <div tabindex="3" class="item-hover">
                     <i class="fas fa-money-bill-alt"></i>
-                    <a href="#" class="menu-item">Budget</a>
+                    <a href="#" class="sidebar-item">Budget</a>
                 </div>
             </div>
-        </div>
+        </aside>
 
         <!--dashboard-->
 
@@ -48,29 +47,38 @@
 
             <!--navigation menu-->
 
-            <div class="navigation-menu">
-                <div class="dropdown-filter">
+            <nav>
+                <div class="dropdowns-container">
                     <div class="dropdown" onclick="openMonthDropdown(this)">
-                        <span>Month</span>
-                        <i class="fas fa-caret-down"></i>
+                        <div class="dropdown-input">
+                            <span>Month</span>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="dropdown-list">
+                            <a href="#">January</a>
+                            <a href="#">February</a>
+                            <a href="#">March</a>
+                            <a href="#">April</a>
+                            <a href="#">May</a>
+                            <a href="#">June</a>
+                            <a href="#">July</a>
+                            <a href="#">August</a>
+                            <a href="#">September</a>
+                            <a href="#">October</a>
+                            <a href="#">November</a>
+                            <a href="#">December</a>
+                        </div>
                     </div>
-                    <div class="months-list">
-                        <a href="#">January</a>
-                        <a href="#">February</a>
-                        <a href="#">March</a>
-                        <a href="#">April</a>
-                        <a href="#">May</a>
-                        <a href="#">June</a>
-                        <a href="#">July</a>
-                        <a href="#">August</a>
-                        <a href="#">September</a>
-                        <a href="#">October</a>
-                        <a href="#">November</a>
-                        <a href="#">December</a>
-                    </div>
-                    <div class="dropdown">
-                        <span>Cash</span>
-                        <i class="fas fa-caret-down"></i>
+                    <div class="dropdown" onclick="openMonthDropdown(this)">
+                        <div class="dropdown-input">
+                            <span>Payment type</span>
+                            <i class="fas fa-caret-down"></i>
+                        </div>
+                        <div class="dropdown-list">
+                            <a href="#">Cash</a>
+                            <a href="#">Card</a>
+                            <a href="#">Both</a>
+                        </div>
                     </div>
                 </div>
                 <div class="main-buttons">
@@ -81,7 +89,7 @@
                         <a>INCOME</a>
                     </div>
                 </div>
-            </div>
+            </nav>
 
             <!--main-area-->
 
@@ -290,18 +298,33 @@
                         <div class="remove-button disabled" onclick="removeIncomeItem(this)">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="dropdown-inputs">
-                            <div class="dropdown">
-                                <p>Category</p>
-                                <i class="fas fa-caret-down"></i>
+                        <div class="modal-content-flex">
+                            
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p>Category</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown-list">
+                                    <a href="#">Salary</a>
+                                    <a href="#">Allowance</a>
+                                    <a href="#">Gift</a>
+                                </div>
                             </div>
-                            <div class="dropdown">
-                                <p>01/01/2019</p>
-                                <i class="fas fa-caret-down"></i>
+
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p>01/01/2019</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
                             </div>
-                            <div class="dropdown">
-                                <p class="category-expense">0</p>
+
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p class="category-expense">0</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -326,17 +349,33 @@
                         <div class="remove-button disabled" onclick="removeExpenseItem(this)">
                             <i class="fas fa-times"></i>
                         </div>
-                        <div class="dropdown-inputs">
-                            <div class="dropdown">
-                                <p>Category</p>
-                                <i class="fas fa-caret-down"></i>
+                        <div class="modal-content-flex">
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p>Category</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
+                                <div class="dropdown-list">
+                                    <a href="#">House</a>
+                                    <a href="#">Bills</a>
+                                    <a href="#">Car</a>
+                                    <a href="#">Food</a>
+                                    <a href="#">Pet</a>
+                                    <a href="#">Travel</a>
+                                </div>
                             </div>
-                            <div class="dropdown">
-                                <p>01/01/2019</p>
-                                <i class="fas fa-caret-down"></i>
+
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p>01/01/2019</p>
+                                    <i class="fas fa-caret-down"></i>
+                                </div>
                             </div>
-                            <div class="dropdown">
-                                <p class="category-expense">0</p>
+
+                            <div class="dropdown dropdown-modal">
+                                <div class="dropdown-input">
+                                    <p class="category-expense">0</p>
+                                </div>
                             </div>
                         </div>
                     </div>
