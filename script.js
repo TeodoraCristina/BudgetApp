@@ -1,3 +1,6 @@
+
+
+
 // Navigation dropdown
 
 // var monthsList = document.getElementsByClassName('months-list')[0];
@@ -5,8 +8,6 @@
 function openMonthDropdown(element) { 
     element.classList.toggle("show");
 }
-
-
 
 
 //Income modal
@@ -167,3 +168,16 @@ function updateExpenses(){
 }
 
 setInterval(updateExpenses, 1000);
+
+
+var ps = new PerfectScrollbar('.dashboard');
+
+let dropdownLists = document.querySelectorAll('.dropdown-list');
+
+// dropdownLists.forEach( function(list) {
+//     var scrollBar = new PerfectScrollbar(list);
+// })
+
+for(let index=0; index<=dropdownLists.length; index++) {
+    var scrollBar = new PerfectScrollbar(dropdownLists[index]);
+}
