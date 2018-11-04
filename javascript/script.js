@@ -1,27 +1,59 @@
-// Dropdown (or at least trying)
+// All dropdown lists are hidden by default
 
-//TOGGLING NESTED ul
-$(".dropdown .dropdown-input a").click(function() {
-    $(".dropdown .dropdown-list").toggle();
+$(document).ready(function(){
+    $(".dropdown .dropdown-list").hide();
 });
 
+
+// Toggling dropdown list
+$(".month-dropdown-input").click(function() {
+    $(".dropdown .month-dropdown-list").toggle();
+});
+
+$(".payment-dropdown-input").click(function() {
+    $(".dropdown .payment-dropdown-list").toggle();
+});
+
+$(".income-category-dropdown-input").click(function() {
+    $(".dropdown .income-category-dropdown-list").toggle();
+});
+
+$(".expense-category-dropdown-input").click(function() {
+    $(".dropdown .expense-category-dropdown-list").toggle();
+});
+
+
 //SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
-$(".dropdown .dropdown-list a").click(function() {
+$(".dropdown .payment-dropdown-list a").click(function() {
     var text = $(this).html();
-    $(".dropdown .dropdown-input a span").html(text);
-    $(".dropdown .dropdown-list").hide();
+    $(".payment-dropdown-input span").html(text);
+    $(".dropdown .payment-dropdown-list").hide();
 }); 
 
+$(".dropdown .month-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".month-dropdown-input span").html(text);
+    $(".dropdown .month-dropdown-list").hide();
+});
+
+$(".dropdown .income-category-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".income-category-dropdown-input p").html(text);
+    $(".dropdown .income-category-dropdown-list").hide();
+});
+
+$(".dropdown .expense-category-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".expense-category-dropdown-input p").html(text);
+    $(".dropdown .expense-category-dropdown-list").hide();
+});
 
 //HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
 $(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (! $clicked.parents().hasClass("dropdown"))
+    var $clicked = $(e.target); // selects current element from the event
+    if (! $clicked.parents().hasClass("dropdown")) // Checks if the parent of the clicked element doesnt have the class dropdown
         $(".dropdown .dropdown-list").hide();
 });
-
-
-
 
 //Income modal
 

@@ -51,12 +51,12 @@
 
             <nav>
                 <div class="dropdowns-container">
-                    <!-- <div class="dropdown" onclick="openMonthDropdown(this)">
-                        <div class="dropdown-input">
+                    <div class="dropdown">
+                        <div class="dropdown-input month-dropdown-input">
                             <span>Month</span>
                             <i class="fas fa-caret-down"></i>
                         </div>
-                        <div class="dropdown-list">
+                        <div class="dropdown-list month-dropdown-list">
                             <a href="#">January</a>
                             <a href="#">February</a>
                             <a href="#">March</a>
@@ -70,13 +70,13 @@
                             <a href="#">November</a>
                             <a href="#">December</a>
                         </div>
-                    </div> -->
-                    <div class="dropdown" onclick="openMonthDropdown(this)">
-                        <div class="dropdown-input">
+                    </div>
+                    <div class="dropdown">
+                        <div class="dropdown-input payment-dropdown-input">
                             <a href="#"><span>Payment type</span></a>
                             <i class="fas fa-caret-down"></i>
                         </div>
-                        <div class="dropdown-list show">
+                        <div class="dropdown-list payment-dropdown-list show">
                             <a href="#">Cash<span class="value"></span></a>
                             <a href="#">Card<span class="value"></span></a>
                             <a href="#">Both<span class="value"></span></a>
@@ -302,11 +302,11 @@
                         </div>
         
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
+                                <div class="dropdown-input income-category-dropdown-input">
                                     <p>Category</p>
                                     <i class="fas fa-caret-down"></i>
                                 </div>
-                                <div class="dropdown-list">
+                                <div class="dropdown-list income-category-dropdown-list">
                                     <a href="#">Salary</a>
                                     <a href="#">Allowance</a>
                                     <a href="#">Gift</a>
@@ -321,9 +321,7 @@
                             </div>
 
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
-                                    <p class="category-expense">0</p>
-                                </div>
+                                <input type="text">
                             </div>
 
                     </div>
@@ -350,11 +348,11 @@
                             <i class="fas fa-times"></i>
                         </div>
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
+                                <div class="dropdown-input expense-category-dropdown-input">
                                     <p>Category</p>
                                     <i class="fas fa-caret-down"></i>
                                 </div>
-                                <div class="dropdown-list">
+                                <div class="dropdown-list expense-category-dropdown-list">
                                     <a href="#">House</a>
                                     <a href="#">Bills</a>
                                     <a href="#">Car</a>
