@@ -1,11 +1,11 @@
 // Dropdown (or at least trying)
 
-//TOGGLING NESTED ul
+// --- toggling list
 $(".dropdown .dropdown-input a").click(function() {
     $(".dropdown .dropdown-list").toggle();
 });
 
-//SELECT OPTIONS AND HIDE OPTION AFTER SELECTION
+// --- select and hide options after selection
 $(".dropdown .dropdown-list a").click(function() {
     var text = $(this).html();
     $(".dropdown .dropdown-input a span").html(text);
@@ -13,7 +13,7 @@ $(".dropdown .dropdown-list a").click(function() {
 }); 
 
 
-//HIDE OPTIONS IF CLICKED ANYWHERE ELSE ON PAGE
+// --- hide options if clicked anywhere else on page
 $(document).bind('click', function(e) {
     var $clicked = $(e.target);
     if (! $clicked.parents().hasClass("dropdown"))
