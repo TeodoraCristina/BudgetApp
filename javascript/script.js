@@ -1,27 +1,50 @@
-// Dropdown (or at least trying)
-
-// --- toggling list
-$(".dropdown .dropdown-input a").click(function() {
-    $(".dropdown .dropdown-list").toggle();
+// All dropdown lists are hidden by default
+$(".month-dropdown-list").hide();
+$(".payment-dropdown-list").hide();
+// Toggling dropdown list
+$(".month-dropdown-input").click(function() {
+    $(".month-dropdown-list").toggle();
 });
 
-// --- select and hide options after selection
-$(".dropdown .dropdown-list a").click(function() {
+$(".payment-dropdown-input").click(function() {
+    $(".payment-dropdown-list").toggle();
+});
+
+$(".income-category-dropdown-input").click(function() {
+    $(".dropdown .income-category-dropdown-list").toggle();
+});
+
+$(".expense-category-dropdown-input").click(function() {
+    $(".dropdown .expense-category-dropdown-list").toggle();
+});
+
+$(".dropdown .payment-dropdown-list a").click(function() {
     var text = $(this).html();
-    $(".dropdown .dropdown-input a span").html(text);
-    $(".dropdown .dropdown-list").hide();
+    $(".payment-dropdown-input span").html(text);
+    $(".dropdown .payment-dropdown-list").hide();
 }); 
 
-
-// --- hide options if clicked anywhere else on page
-$(document).bind('click', function(e) {
-    var $clicked = $(e.target);
-    if (! $clicked.parents().hasClass("dropdown"))
-        $(".dropdown .dropdown-list").hide();
+$(".dropdown .month-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".month-dropdown-input span").html(text);
+    $(".dropdown .month-dropdown-list").hide();
 });
 
+$(".dropdown .income-category-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".income-category-dropdown-input p").html(text);
+    $(".dropdown .income-category-dropdown-list").hide();
+});
 
-
+$(".dropdown .expense-category-dropdown-list a").click(function() {
+    var text = $(this).html();
+    $(".expense-category-dropdown-input p").html(text);
+    $(".dropdown .expense-category-dropdown-list").hide();
+});$(document).bind('click', function(e) {
+    var $clicked = $(e.target); // selects current element from the event
+    if (! $clicked.parents().hasClass("dropdown")) // Checks if the parent of the clicked element doesnt have the class dropdown
+        $(".dropdown .dropdown-list").hide();
+});
 
 //Income modal
 
@@ -62,19 +85,22 @@ var incomeContent = document.getElementsByClassName('modal-content-income')[0];
 
 function addNewItemIncome(){
     var clone = itemRowIncome.cloneNode(true);
-    itemRowIncome.getElementsByClassName("remove-button")[0].classList.remove("disabled");
+    var newItems = document.getElementsByClassName('row')[0];
+    newItems.getElementsByClassName("remove-button")[0].classList.remove("disabled");
     clone.getElementsByClassName("remove-button")[0].classList.remove("disabled");
     incomeContent.appendChild(clone);
 }
 
 function removeIncomeItem(item){
-    let count = incomeContent.childElementCount;
-    if (count == 2)
-    {
-        let removeButton = document.querySelectorAll('.modal-content-income .remove-button')[0];
-        removeButton.classList.add("disabled");
+    var items = document.querySelectorAll('.modal-content-income .row');
+    if(items.length > 2){
+        item.parentElement.remove();
+    }else if(items.length == 2){
+        item.parentElement.remove();
+        var newItems = document.getElementsByClassName('row')[0];
+        newItems.getElementsByClassName("remove-button")[0].classList.add("disabled");
+        console.log(newItems);
     }
-    item.parentElement.remove();
 }
 
 //Adding and removing a row in modal (Expense)

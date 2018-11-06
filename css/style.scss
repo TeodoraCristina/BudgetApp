@@ -362,6 +362,7 @@ nav {
 	@include flexSpaceBetween();
 	align-items: center;
 	margin-top: 15px;
+	color: $primaryColor;
 
 	.remove-button {
 		width: 18px;
@@ -406,6 +407,19 @@ nav {
 	display: flex;
 	flex-direction: column;
 
+	input[type=text]{
+		padding: 12px 15px;
+		width: 160px;
+		height: 48px;
+		outline: none;
+		border: 1px solid $secondaryColor;
+		border-radius: 5px;
+	}
+
+	span {
+		color: $primaryColor;
+	}
+
 	a {
 		color: $primaryColor;
 	}
@@ -418,6 +432,8 @@ nav {
 		border: 1px solid $secondaryColor;
 		border-radius: 5px;
 		cursor: pointer;
+
+
 
 		.fas {
 			color: $secondaryColor;

@@ -500,6 +500,7 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 15px;
+  color: #0e4484;
 }
 
 .row .remove-button {
@@ -552,6 +553,19 @@ nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+}
+
+.dropdown input[type=text] {
+  padding: 12px 15px;
+  width: 160px;
+  height: 48px;
+  outline: none;
+  border: 1px solid #caeaff;
+  border-radius: 5px;
+}
+
+.dropdown span {
+  color: #0e4484;
 }
 
 .dropdown a {

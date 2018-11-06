@@ -51,38 +51,30 @@
 
             <nav>
                 <div class="dropdowns-container">
-                    <div class="dropdown">
-                        <div class="dropdown-input">
+					<div class="dropdown">
+                        <div class="dropdown-input month-dropdown-input">
                             <a href="#"><span>Month</span></a>
                             <i class="fas fa-caret-down"></i>
                         </div>
-                        <div class="dropdown-list abc">
-                            <a href="#">January<span class="value"></span></a>
-                            <a href="#">February<span class="value"></span></a>
-                            <a href="#">March<span class="value"></span></a>                            <a href="#">January<span class="value"></span></a>
-                            <a href="#">April<span class="value"></span></a>
-                            <a href="#">May<span class="value"></span></a>
-                            <a href="#">June<span class="value"></span></a>
-                            <a href="#">July<span class="value"></span></a>
-                            <a href="#">August<span class="value"></span></a>
-                            <a href="#">September<span class="value"></span></a>
-                            <a href="#">October<span class="value"></span></a>
-                            <a href="#">November<span class="value"></span></a>
-                            <a href="#">December<span class="value"></span></a>
+                        <div class="dropdown-list month-dropdown-list">
+                                <a href="#">November</a>
+                                <a href="#">December</a>
                         </div>
                     </div>
-                    <div class="dropdown">
-                        <div class="dropdown-input">
+     				<div class="dropdown">
+                        <div class="dropdown-input payment-dropdown-input">
                             <a href="#"><span>Payment type</span></a>
                             <i class="fas fa-caret-down"></i>
                         </div>
-                        <div class="dropdown-list">
+                        <div class="dropdown-list payment-dropdown-list">                            
                             <a href="#">Cash<span class="value"></span></a>
                             <a href="#">Card<span class="value"></span></a>
                             <a href="#">Both<span class="value"></span></a>
                         </div>
                     </div>
-                </div>
+               
+            </div>
+
                 <div class="main-buttons">
                     <div class="button expense" onclick="openExpenseModal(this)">
                         <a>EXPENSE</a>
@@ -302,11 +294,11 @@
                         </div>
         
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
+                                <div class="dropdown-input income-category-dropdown-input">
                                     <p>Category</p>
                                     <i class="fas fa-caret-down"></i>
                                 </div>
-                                <div class="dropdown-list">
+                                <div class="dropdown-list income-category-dropdown-list">
                                     <a href="#">Salary</a>
                                     <a href="#">Allowance</a>
                                     <a href="#">Gift</a>
@@ -321,9 +313,7 @@
                             </div>
 
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
-                                    <p class="category-expense">0</p>
-                                </div>
+                                <input type="text">
                             </div>
 
                     </div>
@@ -345,16 +335,16 @@
                     <p>0</p>
                 </div>
                 <div class="modal-content-expense">
-                    <div class="row" id="expenseRow">
+                    <div class="row">
                         <div class="remove-button disabled" onclick="removeExpenseItem(this)">
                             <i class="fas fa-times"></i>
                         </div>
                             <div class="dropdown modal-dropdown">
-                                <div class="dropdown-input">
+                                <div class="dropdown-input expense-category-dropdown-input">
                                     <p>Category</p>
                                     <i class="fas fa-caret-down"></i>
                                 </div>
-                                <div class="dropdown-list">
+                                <div class="dropdown-list expense-category-dropdown-list">
                                     <a href="#">House</a>
                                     <a href="#">Bills</a>
                                     <a href="#">Car</a>
